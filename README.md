@@ -3,6 +3,9 @@
 ## Introduction
 This Streamlit app is designed to assist researchers and students in converting potential readings between different reference electrodes at 25°C. It supports conversions among several standard reference electrodes including the Standard Hydrogen Electrode (SHE), Saturated Calomel Electrode (SCE), Copper-Copper(II) Sulfate Electrode (CSE), and the Silver-Silver Chloride (Ag/AgCl) electrode in saturated KCl. The app provides an intuitive interface for inputting potential values and selecting reference electrodes for conversion. Additionally, it features a visualization component that plots the reference electrode scales, illustrating the conversion result graphically.
 
+# Webapp link
+https://reference-electrode-converter.streamlit.app
+
 ## Setup
 To run this app locally, you need Python and pip installed on your system. Follow these steps to set up the app:
 
