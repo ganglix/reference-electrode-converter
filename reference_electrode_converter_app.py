@@ -1,14 +1,6 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 
-# dictionary and functions
-REF_POT_SHE = {
-    #name: (potential vs SHE, Thermal temperature coefficient V/degC)
-    "SHE": (0.000, 0.87e-3),
-    "SCE": (0.241, 0.22e-3),
-    "CSE": (0.314, 0.9e-3),
-    "Ag/AgCl (sat'd KCl)": (0.196, 0) # Thermal temperature coefficient not available
-}
 
 def ref_temp_corrected(pot, thermal_coeff, T):
     """
@@ -82,6 +74,36 @@ def plot_reference_electrodes(pot_vsRef2, ref2, T2):
 # Streamlit app starts here
 st.title('Electrode Potential Converter')
 st.write('This app allows you to convert potential readings from one reference electrode to another. Simply select the reference electrodes and enter the potential to convert.')
+
+
+# dictionary and functions
+
+thermal_handling= st.radio(
+    "Select Temperature Dependence",
+    ["Thermal", "Isothermal"],
+    captions=["Referenced to Standard Hydrogen Electrode (SHE) at 25 °C [Default]",
+                "Referenced to SHE at the operation temperature of the other electrode"])
+
+if thermal_handling == "Thermal":
+    REF_POT_SHE = {
+    #name: (potential vs SHE, Thermal temperature coefficient V/degC)
+    "SHE": (0.000, 0.87e-3),
+    "SCE": (0.241, 0.22e-3),
+    "CSE": (0.314, 0.9e-3),
+    "Ag/AgCl (sat'd KCl)": (0.196, 0) # Thermal temperature coefficient not available
+    }
+
+else:
+    DIFF = 0.87e-3 #V/degC
+    REF_POT_SHE = {
+    #name: (potential vs SHE, Thermal temperature coefficient V/degC)
+    "SHE": (0.000, 0.87e-3 - DIFF),
+    "SCE": (0.241, 0.22e-3 - DIFF),
+    "CSE": (0.314, 0.9e-3 - DIFF),
+    "Ag/AgCl (sat'd KCl)": (0.196, 0) # Thermal temperature coefficient not available
+}
+
+
 
 # Use Streamlit's columns function to create two columns
 col1, col2 = st.columns(2)
