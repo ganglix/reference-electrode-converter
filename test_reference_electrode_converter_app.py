@@ -16,7 +16,7 @@ class TestElectrodePotentials(unittest.TestCase):
     def test_convert_AgAgCl_to_CSE(self):
         """Test conversion from Ag/AgCl (saturated KCl) to CSE."""
         result = convert_vsRef1_to_vsRef2(-0.200, "Ag/AgCl (saturated KCl)", "CSE")
-        self.assertAlmostEqual(result, -0.317, places=3)
+        self.assertAlmostEqual(result, -0.318, places=3)
 
     def test_convert_CSE_to_SHE(self):
         """Test conversion from CSE to SHE."""

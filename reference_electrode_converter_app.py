@@ -6,7 +6,7 @@ REF_POT_SHE = {
     "SHE": 0.000, 
     "SCE": 0.241,
     "CSE": 0.314,
-    "Ag/AgCl (saturated KCl)": 0.197,
+    "Ag/AgCl (saturated KCl)": 0.196,
 }
 
 def convert_to_vsSHE(pot_vsRef, ref):
@@ -60,8 +60,6 @@ def plot_reference_electrodes(pot_vsRef2, ref2):
 
     # To further clean up the plot, you can turn off x-axis ticks as well
     ax.tick_params(axis='x', which='both', bottom=False, top=False)
-
-
     return fig
 
 # Streamlit app starts here
@@ -104,7 +102,8 @@ if st.button('Convert Potential'):
 # Divider
 st.markdown("---")
 
-# Display REF_POT_SHE information below the columns
-st.write('Note: Reference Electrode Potentials vs. SHE')
-for ref, pot in REF_POT_SHE.items():
-    st.write(f"{ref}: {pot} V")
+with st.expander("Notes"):
+    # Display REF_POT_SHE information below the columns
+    st.write('Note: Reference Electrode Potentials vs. SHE')
+    for ref, pot in REF_POT_SHE.items():
+        st.write(f"{ref}: {pot} V")
