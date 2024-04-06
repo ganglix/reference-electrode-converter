@@ -28,15 +28,25 @@ def plot_reference_electrodes(pot_vsRef2, ref2):
 
     fig, ax = plt.subplots(figsize=(5, 6))
     x_positions = range(len(categories))
+    category_x_dict = {cat: x_pos for cat, x_pos in zip(categories, x_positions)}
 
     for x, offset in zip(x_positions, offsets):
         ax.plot([x, x, x], [-1 + offset, 0 + offset, 1 + offset], 'k',marker='+', alpha = (categories[x]==ref2)*0.8+0.2)
         # Annotate the offset next to each line
-        ax.text(x, offset, f'  0 vs. {categories[x]}', horizontalalignment='left')
+        ax.text(x, offset-0.03, f'  0 vs. {categories[x]}', horizontalalignment='left')
     
     # Plot a horizontal line to represent the converted potential
-    converted_potential = convert_to_vsSHE(pot_vsRef2, ref2)
-    ax.plot([x_positions[0], x_positions[-1]], [converted_potential, converted_potential], 'r--', linewidth=1)
+    pot_vsSHE = convert_to_vsSHE(pot_vsRef2, ref2)
+    ax.plot([x_positions[0], x_positions[-1]], [pot_vsSHE, pot_vsSHE], 'r--', linewidth=0.5)
+    # add arrow
+    # Plot a red arrowed line from start_point to end_point
+    end_point = (category_x_dict[ref2]+0.05, pot_vsSHE)
+    start_point = (category_x_dict[ref2]+0.05, REF_POT_SHE[ref2])
+    ax.annotate("", xy= end_point, xycoords='data',
+            xytext= start_point, textcoords='data',
+            arrowprops=dict(arrowstyle="->", connectionstyle="arc3", color="red"))
+
+    ax.text(category_x_dict[ref2], pot_vsSHE, f'  {pot_vsRef2:.3f} vs. {ref2}', horizontalalignment='left', color='r')
 
     ax.set_xticks(x_positions)
     ax.set_xticklabels(categories)
