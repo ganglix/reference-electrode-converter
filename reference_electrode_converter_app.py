@@ -89,7 +89,7 @@ if thermal_handling == "Thermal":
     #name: (potential vs SHE, Thermal temperature coefficient V/degC)
     "SHE": (0.000, 0.87e-3),
     "SCE": (0.241, 0.22e-3),
-    "CSE": (0.314, 0.9e-3),
+    "CSE": (0.318, 0.9e-3),
     "Ag/AgCl (sat'd KCl)": (0.196, 0) # Thermal temperature coefficient not available
     }
 
@@ -99,7 +99,7 @@ else:
     #name: (potential vs SHE, Thermal temperature coefficient V/degC)
     "SHE": (0.000, 0.87e-3 - DIFF),
     "SCE": (0.241, 0.22e-3 - DIFF),
-    "CSE": (0.314, 0.9e-3 - DIFF),
+    "CSE": (0.318, 0.9e-3 - DIFF),
     "Ag/AgCl (sat'd KCl)": (0.196, 0) # Thermal temperature coefficient not available
 }
 
@@ -159,10 +159,13 @@ with st.expander("Notes"):
 | Hg/Hg2Cl2/1 M KCl              | +0.280                | +0.59                                    |
 | Hg/Hg2Cl2/0.1 M KCl            | +0.334                | +0.79                                    |
 | Cu/CuSO4 sat                   | +0.30                 | +0.90                                    |
-| Cu/CuSO4 sat (multiple sources, used by this app)| +0.314                | +0.90                                    |
+| Cu/CuSO4 sat** (used by this app)| +0.318              | ...                                 |
 
 Notes:  
 - *Convert from thermal to isothermal temperature coefficients subtract 0.87 mV/°C. Thus, the isothermal temperature coefficient for Ag/AgCl (1M) is -0.62 mV/°C.
 - *The resulting isothermal temperature coefficients are consistent with Table 4.7 in Roberge, P.R. (2008) Corrosion Engineering: Principles and Practice. McGraw-Hill, New York.
+- ** 0.318 V (Roberge, P.R. 2008); 
+- ** 0.318 V or 0.30 V ("for practical field purposes") Jones, D. A. (1996). Principles and prevention. Corrosion, 2, 168.
+- ** 0.317 V, Slope of 0.17 mV/°C over 5° < T < 45°C. Stern, H. A., Sadoway, D. R., & Tester, J. W. (2011). Copper sulfate reference electrode. Journal of electroanalytical chemistry, 659(2), 143-150.
 - Table content adapted from Table X2.1 in ASTM G3-14(2019)
 - More on temperature coefficient: deBethune, A.J., Licht, T.S., & Swendeman, N. (1959). The Temperature Coefficients of Electrode Potentials The Isothermal and Thermal Coefficients—The Standard Ionic Entropy of Electrochemical Transport of the Hydrogen Ion. Journal of The Electrochemical Society, 106, 616-625.               ''')
