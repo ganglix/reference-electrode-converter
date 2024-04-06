@@ -169,5 +169,11 @@ Notes:
 - ** 0.317 V, Slope of 0.17 mV/°C over 5° < T < 45°C. Stern, H. A., Sadoway, D. R., & Tester, J. W. (2011). Copper sulfate reference electrode. Journal of electroanalytical chemistry, 659(2), 143-150.
 - Table content adapted from Table X2.1 in ASTM G3-14(2019)
 - More on temperature coefficient: deBethune, A.J., Licht, T.S., & Swendeman, N. (1959). The Temperature Coefficients of Electrode Potentials The Isothermal and Thermal Coefficients—The Standard Ionic Entropy of Electrochemical Transport of the Hydrogen Ion. Journal of The Electrochemical Society, 106, 616-625.               
-- SCE is not stable above 50 °C.                 
-                ''')
+- Utilizing the Nernst equation for calculating the thermal coefficient is fundamentally flawed. The temperature variable (T) functions as a scaling factor, bridging the potential of a reaction to its reaction quotient. For a comprehensive understanding:
+  - A good explanation is accessible [here](https://chemistry.stackexchange.com/questions/26405/why-does-temperature-affect-cell-potential/84721#84721).
+  - For a formal discourse on this matter, reference the work of deBethune et al., 1959.
+
+Additional notes:
+- SCE is not stable above 50 °C.
+        
+                  ''')
