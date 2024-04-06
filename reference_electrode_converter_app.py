@@ -159,7 +159,7 @@ with st.expander("Notes"):
 | Hg/Hg2Cl2/1 M KCl              | +0.280                | +0.59                                    |
 | Hg/Hg2Cl2/0.1 M KCl            | +0.334                | +0.79                                    |
 | Cu/CuSO4 sat                   | +0.30                 | +0.90                                    |
-| Cu/CuSO4 sat** (used by this app)| +0.318              | ...                                 |
+| Cu/CuSO4 sat** (used by this app)| +0.318              | ...                                      |
 
 Notes:  
 - *Convert from thermal to isothermal temperature coefficients subtract 0.87 mV/°C. Thus, the isothermal temperature coefficient for Ag/AgCl (1M) is -0.62 mV/°C.
