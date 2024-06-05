@@ -1,4 +1,4 @@
-# Electrode Potential Converter
+# Reference Electrode Potential Converter
 
 ## Introduction
 This Streamlit app enables users to convert electrode potential readings between different reference electrodes, accommodating temperature variations. It supports conversions among several standard reference electrodes including the Standard Hydrogen Electrode (SHE), Saturated Calomel Electrode (SCE), Copper-Copper(II) Sulfate Electrode (CSE), and the Silver-Silver Chloride (Ag/AgCl) electrode in saturated KCl. The app's intuitive interface allows users to input potential values, select reference electrodes, and specify operating temperatures for accurate conversion. A unique feature of this app is its ability to account for thermal effects on electrode potentials, offering both thermal and isothermal conversion options. Additionally, it features a visualization component that plots the reference electrode scales, illustrating the conversion result graphically.
