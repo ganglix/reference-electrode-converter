@@ -90,17 +90,17 @@ if thermal_handling == "Thermal":
     "SHE": (0.000, 0.87e-3),
     "SCE": (0.241, 0.22e-3),
     "CSE": (0.318, 0.9e-3),
-    "Ag/AgCl (sat'd KCl)": (0.196, 0.214) # Thermal temperature coefficient not available
+    "Ag/AgCl (sat'd KCl)": (0.196, 0.214) 
     }
 
 else:
     DIFF = 0.87e-3 #V/degC
     REF_POT_SHE = {
-    #name: (potential vs SHE, Thermal temperature coefficient V/degC)
+    #name: (potential vs SHE, Isothermal temperature coefficient V/degC)
     "SHE": (0.000, 0.87e-3 - DIFF),
     "SCE": (0.241, 0.22e-3 - DIFF),
     "CSE": (0.318, 0.9e-3 - DIFF),
-    "Ag/AgCl (sat'd KCl)": (0.196, 0.214 - DIFF) # Thermal temperature coefficient not available
+    "Ag/AgCl (sat'd KCl)": (0.196, 0.214 - DIFF) 
 }
 
 
